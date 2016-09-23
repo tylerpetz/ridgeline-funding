@@ -106,5 +106,9 @@ section {
 
 	&.main {
 		padding-top: 145px;
+
+		@include breakpoint(xlarge down) {
+			padding-top: 120px;
+		}
 	}
 }

@@ -11,11 +11,29 @@ header {
 	background-size: auto 92px;
 	z-index: 10;
 
+	@include respond(xlarge) {
+		background: #1e7cc7;
+		height: 72px;
+		box-shadow: 0 5px 15px 0 rgba(0,0,0,.15);
+	}
+
+	@include respond(medium) {
+		height: 65px;
+	}
+
 	.container {
+
+		@include respond(xlarge) {
+			padding-right: 15px;
+		}
 
 		nav {
 			float: left;
 			width: 768px;
+
+			@include respond(xlarge) {
+				width: auto;
+			}
 
 			#logo {
 				background-image: url(../img/logo.png);
@@ -32,6 +50,23 @@ header {
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center;
+
+				@include respond(medium) {
+					height: 50px;
+					width: 112px;
+					margin-left: 0px;
+				}
+			}
+
+			.menu-icon {
+				display: none;
+
+				@include respond(medium) {
+					display: block;
+					position: absolute;
+					right: 20px;
+					top: 25px;
+				}
 			}
 
 			ul {
@@ -39,7 +74,37 @@ header {
 				margin-top: 25px;
 				margin-right: 30px;
 
+				@include respond(xlarge) {
+					margin-top: 19px;
+					float: left;
+					margin-left: 30px;
+					margin-right: 0;
+				}
+
+				@include respond(medium) {
+					display: none;
+					margin: 0;
+					background: #1e7cc7;
+					top: 65px;
+					left: 0;
+					right: 0;
+					width: 100%;
+					height: auto;
+					position: absolute;
+					z-index: -1;
+
+					&.open {
+						display: block;
+					}
+				}
+
 				li {
+
+					@include respond(medium) {
+						display: block;
+						width: 100%;
+						text-align: center;
+					}
 
 					a {
 						font-family: $bebas;
@@ -49,8 +114,22 @@ header {
 						border-bottom: 2px solid transparent;
 						margin-left: 10px;
 
+						@include respond(xlarge) {
+							margin-left: 8px;
+						}
+
+						@include respond(medium) {
+							margin-left: 0;
+							border-bottom: none;
+						}
+
 						&.active, &:hover {
 							border-bottom: 2px solid #e8c23f;
+
+							@include respond(medium) {
+								border-bottom: none;
+								color: #e8c23f;
+							}
 						}
 					}
 				}
@@ -65,9 +144,25 @@ header {
 			font-size: 22px;
 			font-weight: normal;
 
+			@include respond(xlarge) {
+				float: right;
+				margin-top: 22px;
+				font-size: 20px;
+				margin-left: 0;
+
+			}
+
+			@include respond(large) {
+				display: none;
+			}
+
 			span {
 				color: #1e7cc7;
 				font-weight: bold;
+
+				@include respond(xlarge) {
+					color: white;
+				}
 			}
 		}
 	}

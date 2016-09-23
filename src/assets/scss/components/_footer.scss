@@ -3,6 +3,10 @@ footer {
 	padding: 25px 0;
 	margin-top: 25px;
 
+	@include respond(medium) {
+		text-align: center;
+	}
+
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -24,6 +28,10 @@ footer {
 	.copyright {
 		text-align: right;
 
+		@include respond(medium) {
+			text-align: center;
+		}
+
 		ul {
 			margin: 10px 0;
 
@@ -44,6 +52,10 @@ footer {
 		p {
 			color: white;
 			margin-bottom: 0;
+
+			@include respond(medium) {
+				font-size: 14px;
+			}
 
 			a {
 				color: white;
